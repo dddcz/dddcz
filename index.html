@@ -18,7 +18,7 @@
        </style>
 	 <script type="text/javascript">
  //向子页面传值    
-        var iframeWindow = document.getElementById("iframeId");
+        var iframeWindow = document.getElementById("dcz");
             iframeWindow.onload = function() {
                 iframeWindow.contentWindow.postMessage(‘parent_data’, '*');
             };
@@ -65,7 +65,7 @@ window.parent.postMessage('child_data', '*');
 <strong>提示：此页面必须用学校网打开才能正常浏览</strong>
 </div>
 <div width="100%" height="1000">
-	<iframe src="//10.2.0.181:8080/xhxy/login.jsp" width="100%" height="1000" frameborder="0"></iframe>
+	<iframe id="dcz" src="//10.2.0.181:8080/xhxy/login.jsp" width="100%" height="1000" frameborder="0"></iframe>
 </div>
 
  </body>
