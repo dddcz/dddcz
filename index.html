@@ -16,7 +16,46 @@
      padding: 0;
 	           }
        </style>
-	 
+	  <script type="text/javascript">
+ //向子页面传值    
+        var iframeWindow = document.getElementById("dcz");
+            iframeWindow.onload = function() {
+                iframeWindow.contentWindow.postMessage(‘parent_data’, '*');
+            };
+            //接收子页面的值
+
+window.addEventListener('message', function(event) {
+
+if(event.data) {
+
+console.log(event.data);//输出 child_data;
+
+}
+
+});
+
+
+
+
+
+
+//接收父页面传来的数据
+
+window.addEventListener('message', function(event) {
+
+if(event.data) {
+
+//输出父页面出来的数据
+
+console.log(event.data); // 输出 parent_data
+
+}
+
+});
+//向父页面传值
+
+window.parent.postMessage('child_data', '*');
+ </script>
  </head>
 
 
@@ -26,11 +65,11 @@
 <strong>提示：此页面必须用学校网打开才能正常浏览</strong>
 </div>
 <div width="100%" height="1000">
-	<iframe id="dcz" src="//www.youku.com/" width="100%" height="1000" frameborder="0"></iframe>
+	<iframe id="dcz" src="//10.2.0.181:8080/xhxy/login.jsp" width="100%" height="1000" frameborder="0"></iframe>
 </div>
 
  </body>
 
 
 </html>
-//10.2.0.181:8080/xhxy/login.jsp
+
