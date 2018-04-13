@@ -16,46 +16,7 @@
      padding: 0;
 	           }
        </style>
-	 <script type="text/javascript">
- //向子页面传值    
-        var iframeWindow = document.getElementById("dcz");
-            iframeWindow.onload = function() {
-                iframeWindow.contentWindow.postMessage(‘parent_data’, '*');
-            };
-            //接收子页面的值
-
-window.addEventListener('message', function(event) {
-
-if(event.data) {
-
-console.log(event.data);//输出 child_data;
-
-}
-
-});
-
-
-
-iframe 子页面：
-
-
-//接收父页面传来的数据
-
-window.addEventListener('message', function(event) {
-
-if(event.data) {
-
-//输出父页面出来的数据
-
-console.log(event.data); // 输出 parent_data
-
-}
-
-});
-//向父页面传值
-
-window.parent.postMessage('child_data', '*');
- </script>
+	 
  </head>
 
 
